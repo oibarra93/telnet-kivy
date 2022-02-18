@@ -41,23 +41,22 @@
 </div>
 <p>Run the following, line per line.</p>
 <div class="code">
-  <code><p>sudo apt update</p>
-    <p>sudo apt install -y git zip unzip openjdk-13-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev</p>
-  <p>python3 -m pip install --upgrade Cython==0.29.19 virtualenv</p>
+  <pre><code>sudo apt update</code></pre>
+    <pre><code>sudo apt install -y git zip unzip openjdk-13-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev</code></pre>
+  <pre><code>python3 -m pip install --upgrade Cython==0.29.19 virtualenv</code></pre>
     
   <p># add the following line at the end of your ~/.bashrc file</p>
-  <p>export PATH=$PATH:~/.local/bin/</p>
-  </code>
+  <pre><code>export PATH=$PATH:~/.local/bin/</code></pre>
 </div>
 <p>Install the remaining dependencies.
 <div class="code">
 <code>
-<p>python -m pip install --upgrade pip</p>
-<p>python -m pip install --upgrade wheel</p>
-<p>python -m pip install --upgrade cython</p>
-<p>python -m pip install --upgrade virtualenv</p>
-<p>python -m pip install --upgrade buildozer</p>
-</code></div>
+<pre><code>python -m pip install --upgrade pip</code></pre>
+<pre><code>python -m pip install --upgrade wheel</code></pre>
+<pre><code>python -m pip install --upgrade cython</code></pre>
+<pre><code>python -m pip install --upgrade virtualenv</code></pre>
+<pre><code>python -m pip install --upgrade buildozer</code></pre>
+</div>
 <P>Buildozer will try to guess the version of your application, by searching a line like __version__ = “1.0.3” in your main.py. Ensure you have one at the start of your application. It is not mandatory but heavily advised.</P>
 
 <p>Create a buildozer.spec file, with:</P>
@@ -83,12 +82,12 @@
 <div class="code">
 <code>
 <pre class="tabbed">ToggleButton:</pre>
-<pre class="tabbed"><code>    group: "input_group"</code></pre>
-<pre class="tabbed"><code>    text : "Blueray"</code></pre>
-<pre class="tabbed"><code>    font_size: "24dp"</code></pre>
-<pre class="tabbed"><code>    state: root.get_input_source(self)</code></pre>
-<pre class="tabbed"><code>    on_release: root.change_input(self)
-</code></pre>
+<pre class="tabbed">    group: "input_group"</pre>
+<pre class="tabbed">    text : "Blueray"</pre>
+<pre class="tabbed">    font_size: "24dp"</pre>
+<pre class="tabbed">    state: root.get_input_source(self)</pre>
+<pre class="tabbed">    on_release: root.change_input(self)
+</pre></code>
 </div>
 <p>In the main.py file you would change line 255 to:</p>
 <div class="code">
