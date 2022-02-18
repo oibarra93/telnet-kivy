@@ -1,0 +1,159 @@
+<MyRoot>
+    
+    txtbox_input: txtbox_input
+    txtInput_Command : txtInput_Command
+    outputLabel : outputLabel
+    volumeSlider : volumeSlider
+    powerbtn : powerbtn
+    mutebtn : mutebtn
+    chromecast : chromecast
+    bluetooth : bluetooth
+    pc : pc
+    spotify : spotify
+    tv : tv
+    fakeLabel : fakeLabel
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source:"shrek.jpg"
+        orientation: 'vertical'
+        BoxLayout:
+            orientation:'vertical'
+            size: root.width, "100dp"
+            size_hint: None, None
+            ScrollView:
+                id: outputLabel
+                text: ""
+                bar_color: 0.92, 0.45, 0, 1
+                do_scroll_y: True
+                do_scroll_x: False
+                bar_size: 
+                Label:
+                    id: fakeLabel
+                    text: outputLabel.text
+                    text_size: self.width, None
+                    font_name: "fonts/8bit.ttf"
+                    font_size: "32dp"
+                    color: 0.92, 0.45, 0, 1
+                    background_color: 1, 1, 1, 1
+                    multiline: True
+                    size_hint_y: None
+                    valign: "top"
+                    halign: "center"
+                    height: self.texture_size[1]
+                    spacing: "8dp"
+
+        BoxLayout:
+            orientation: 'horizontal'
+            
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: "10dp"
+                padding: "10dp"
+                TextInput:
+                    id:txtbox_input
+                    hint_text: "Hostname"
+                    text: ""
+                    size: "50dp", "50dp"
+                    font_size: "24dp"
+                    multiline: False
+                    text_validate_unfocus: False
+                    on_text_validate: root.connect()
+                    background_color: 1, 1, 1, 1
+                Button:
+                    text: "Connect"
+                    font_size: "24dp"
+                    size: "100dp", "50dp"
+                    on_release: root.connect()
+                TextInput:
+                    id:txtInput_Command
+                    hint_text: "Command"
+                    text: ""
+                    size: "50dp", "50dp"
+                    font_size: "24dp"
+                    multiline: False
+                    text_validate_unfocus: False
+                    on_text_validate: root.send_command()
+                Button:
+                    text: "Send Command"
+                    font_size: "24dp"
+                    size: "100dp", "50dp"
+                    on_release: root.send_command()
+                BoxLayout:
+                    orientation: 'horizontal'
+                    spacing: "10dp"
+                    ToggleButton:
+                        id: mutebtn
+                        text: "Mute"
+                        state: "normal"
+                        on_state: root.toggle_mute(self)
+                        state: root.get_mute_state()
+                    ToggleButton:
+                        id: powerbtn
+                        text: "Power"
+                        on_state:root.toggle_power(self)
+                        state: root.get_power_state()
+            BoxLayout:
+                orientation: 'vertical'
+                
+                BoxLayout:
+                    id: boxButton
+                    orientation: 'vertical'
+                    spacing: "10dp"
+                    padding: "10dp"
+                    ToggleButton:
+                        id: chromecast
+                        group: "input_group"
+                        text : "Chromecast"
+                        font_size: "24dp"
+                        state: root.get_input_source(self)
+                        on_release: root.change_input(self)
+                    ToggleButton:
+                        id: bluetooth
+                        group: "input_group"
+                        text : "Bluetooth"
+                        font_size: "24dp"
+                        state: root.get_input_source(self)
+                        on_release: root.change_input(self)
+                    ToggleButton:
+                        id: pc            
+                        group: "input_group"
+                        text : "PC"
+                        font_size: "24dp"
+                        state: root.get_input_source(self)
+                        on_release: root.change_input(self)
+                    ToggleButton:
+                        id: spotify        
+                        group: "input_group"
+                        text : "Spotify"
+                        font_size: "24dp"
+                        state: root.get_input_source(self)
+                        on_release: root.change_input(self)
+                    ToggleButton:
+                        id: tv
+                        group: "input_group"
+                        text : "TV"
+                        font_size: "24dp"
+                        state: root.get_input_source(self)
+                        on_release: root.change_input(self)
+                    ToggleButton:
+                        id: ps4
+                        group: "input_group"
+                        text : "PS4"
+                        font_size: "24dp"
+                        state: root.get_input_source(self)
+                        on_release: root.change_input(self)
+        BoxLayout:
+            size_hint_y: .25
+            Slider:
+                id: volumeSlider
+                max: 186
+                #on_touch_move: root.change_volume()
+                value_track :True
+                value_track_color: 0.92, 0.45, 0, 1
+                sensitivity: "handle"
+                value: root.get_volume_level()
