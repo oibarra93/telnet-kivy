@@ -72,6 +72,7 @@
 </code></div>
 <h2>Commands</h2>
 <p>Commands can be found in <a href="Pioneer-IP-RS232-Commands.pdf">Pioneer-IP-RS232-Commands.pdf</a>
-<p>A useful command to run is <code>?f</code> which returns a code like <code>fn06</code> which is the current input the receiver is on. That numeric code is what's used in the <code>selection</code> dictionary in main.py to bind the names of the inputs to their corresponding codes.
+<p>A useful command to run is <code>?f</code> which returns a code like <code>fn06</code> which is the current input the receiver is on. That numeric code is what's used in the <code>selection</code> dictionary in main.py to bind the names of the inputs to their corresponding codes.</p>
+<p><img src="appscreenshot.png"></p>
 </body>
 </html>
