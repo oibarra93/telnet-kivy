@@ -1,27 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-
-<style type="text/css">
-.tabbed {
-	tab-size: 4;
-	font-size: 1em;
-}
-.code {
-	border-top-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-	border-left-width: 2px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-}
-</style>
-</head>
-
 <body>
 <h1>Pioneer Remote App</h1>
 <p>The APKs have been precompiled to autodetect a Pioneer receiver connected to the network via Ethernet or Wifi. Keep in mind you have to be within the same network as the receiver. These Pioneer receivers run a telnet server on port 8102, but can be customized to have different ports available. If you wish to customize your ports, visit the receiver's ip address in a web browser, and change network settings.</p>
@@ -81,12 +57,12 @@
 <p>
 <div class="code">
 <code>
-<pre class="tabbed">ToggleButton:</pre>
-<pre class="tabbed">    group: "input_group"</pre>
-<pre class="tabbed">    text : "Blueray"</pre>
-<pre class="tabbed">    font_size: "24dp"</pre>
-<pre class="tabbed">    state: root.get_input_source(self)</pre>
-<pre class="tabbed">    on_release: root.change_input(self)
+<pre class="tabbed">ToggleButton:
+	group: "input_group"
+	text : "Blueray"
+	font_size: "24dp"
+	state: root.get_input_source(self)
+	on_release: root.change_input(self)
 </pre></code>
 </div>
 <p>In the main.py file you would change line 255 to:</p>
